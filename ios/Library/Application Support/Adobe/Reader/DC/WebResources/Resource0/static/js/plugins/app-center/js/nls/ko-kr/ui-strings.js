@@ -1,0 +1,19 @@
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2017 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by all applicable intellectual property laws,
+* including trade secret and or copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+
+define({SELECTOR_LABEL:"app_center",APP_CENTER:"앱 센터",app_center_TITLE:"Adobe Document Cloud로 더 많은 작업을 하십시오.",app_center_CONTENT:"원하는 곳에서 작업할 수 있습니다(데스크탑, 온라인 또는 모바일).",app_center_DESKTOP_APPS:"데스크탑 앱",app_center_ACROBAT_PRO_DC_HEADER:"Acrobat Pro",app_center_ACROBAT_PRO_DC_CONTENT:"PDF를 만들고, 내보내고, 편집하기 위한 도구가 포함된 Acrobat Pro의 무료 체험판을 시작합니다.",app_center_WEB_APPS:"웹 앱 및 서비스",app_center_DOCUMENT_CLOUD_HEADER:"Document Cloud",app_center_DOCUMENT_CLOUD_CONTENT_READER:"어떤 브라우저에서든 자주 사용하는 Acrobat Reader 도구를 사용합니다.",app_center_DOCUMENT_CLOUD_CONTENT_ACROBAT:"어떤 브라우저에서든 자주 사용하는 Acrobat 도구를 사용합니다.",app_center_MOBILE_APPS:"모바일 앱",app_center_ACROBAT_READER_HEADER:"Acrobat Reader",app_center_ACROBAT_READER_CONTENT_READER:"휴대 전화나 태블릿에서 바로 파일에 주석을 달고 서명하고 공유합니다.",app_center_ACROBAT_READER_CONTENT_ACROBAT:"휴대 전화나 태블릿에서 바로 파일을 작성하고, 내보내고, 채우고, 서명하고, 공유합니다.",app_center_ADOBE_SCAN_HEADER:"Adobe Scan",app_center_ADOBE_SCAN_CONTENT:"영수증, 메모, 문서 등 무엇이든 스캔하여 PDF로 만듭니다.",app_center_FILL_SIGN_HEADER:"채우기 및 서명",app_center_FILL_SIGN_CONTENT:"양식을 쉽게 채우고 이동 중에 다시 서명합니다.",app_center_TRY:"시도",app_center_LAUNCH:"실행",app_center_DOWNLOAD:"다운로드",app_center_GET_APP:"앱 받기",app_center_card_ADOBE_SCAN:"Adobe Scan",app_center_card_ADOBE_SCAN_TITLE:"무료 Adobe Scan 앱 받기",app_center_card_ADOBE_SCAN_DESCRIPTION:"휴대폰이나 태블릿을 휴대용 스캐너로 사용하여 어떤 대상이든 PDF로 스캔할 수 있습니다. 지금 다운로드하십시오.",app_center_card_ADOBE_ACROBAT_READER:"Adobe Acrobat Reader",app_center_card_ADOBE_ACROBAT_READER_TITLE:"무료 Adobe Acrobat Reader 앱 받기",app_center_card_ADOBE_ACROBAT_READER_DESCRIPTION:"휴대 전화나 태블릿에서 자주 사용하는 PDF 및 서명 도구를 사용할 수 있습니다. 지금 다운로드하십시오.",app_center_card_ADOBE_FILL_SIGN:"Adobe Fill & Sign",app_center_card_ADOBE_FILL_SIGN_TITLE:"무료 Adobe Fill & Sign 앱 받기",app_center_card_ADOBE_FILL_SIGN_DESCRIPTION:"휴대 전화나 태블릿에서 양식을 빠르게 채우고 서명하고 보낼 수 있습니다. 지금 다운로드하십시오.",app_center_qr_code_card_ADOBE_SCAN:"Adobe Scan",app_center_qr_code_card_GET_ADOBE_SCAN_TITLE:"무료 Adobe Scan 앱 받기",app_center_qr_code_card_OPEN_ADOBE_SCAN_TITLE:"Adobe Scan 앱 열기",app_center_qr_code_card_GET_ADOBE_SCAN_DESCRIPTION:"Adobe Scan 모바일 앱을 사용하여 QR 코드를 스캔하면 문서, 영수증 등을 PDF로 전환할 수 있습니다.",app_center_qr_code_card_OPEN_ADOBE_SCAN_DESCRIPTION:"Adobe Scan 앱을 사용하여 QR 코드를 스캔하면 문서, 영수증 등을 PDF로 전환할 수 있습니다.",app_center_qr_code_card_READER_ADOBE_SCAN_DESCRIPTION:"Adobe Scan 모바일 앱을 사용하여 QR 코드를 스캔하면 문서, 영수증 등을 PDF로 전환할 수 있습니다.",app_center_qr_code_card_ADOBE_ACROBAT_READER:"Adobe Acrobat Reader",app_center_qr_code_card_GET_ADOBE_ACROBAT_READER_TITLE:"무료 Acrobat Reader 앱 받기",app_center_qr_code_card_OPEN_ADOBE_ACROBAT_READER_TITLE:"Acrobat Reader 앱 열기",app_center_qr_code_card_GET_ADOBE_ACROBAT_READER_DESCRIPTION:"Adobe Acrobat Reader 모바일 앱을 사용하여 QR 코드를 스캔해 PDF를 보고 편집합니다.",app_center_qr_code_card_OPEN_ADOBE_ACROBAT_READER_DESCRIPTION:"Acrobat Reader 모바일 앱을 사용하여 QR 코드를 스캔해 PDF로 보고 작업합니다.",app_center_qr_code_card_READER_ADOBE_ACROBAT_READER_DESCRIPTION:"Adobe Acrobat Reader 모바일 앱을 사용하여 QR 코드를 스캔해 PDF를 보고, 채우고, 서명하고, 주석을 추가하십시오.",app_center_qr_code_card_OK_BUTTON:"확인"});

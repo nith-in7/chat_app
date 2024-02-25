@@ -1,0 +1,19 @@
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2018 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by all applicable intellectual property laws,
+* including trade secret and or copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+
+define({REQUESTS:"요청",NOTIFICATIONS:"알림",NO_NOTIFICATIONS:"알림 없음",SHOW_MORE:"더 보기",MARKUP_ADDED:"마크업이 추가됨",NO_NOTIFICATIONS_HEADING:"알림은 여기에 표시됩니다.",NO_NOTIFICATIONS_SUBHEADING:"보기, 주석 및 서명을 위해 공유된 파일에 대한 업데이트 내용을 표시합니다.",UNREAD_NOTIFICATION:"<%= count %>개의 읽지 않은 알림",UNREAD_NOTIFICATIONS:"<%= count %>개의 읽지 않은 알림",SIGN:"서명",APPROVE:"승인",FILL:"채우기",FILL_FORM:"양식 채우기",ACKNOWLEDGE:"수신 확인",DELEGATE:"위임",CLOSE:"닫기",ACCEPT:"수락",VIEW:"보기",REVIEW:"검토",OPEN:"열기",VIEW_SIGN:"보기 및 서명",VIEW_APPROVE:"보기 및 승인",VIEW_FILL:"보기 및 양식 채우기",VIEW_ACKNOWLEDGE:"보기 및 수신 확인",VIEW_DELEGATE:"보기 및 위임",VIEW_ACCEPT:"보기 및 수락",SIGNED:"서명됨",E_SIGNED:"전자 서명됨",APPROVED:"승인됨",FILLED:"채워짐",ACKNOWLEDGED:"수신 확인됨",DELEGATED:"위임됨",ACCEPTED:"수락됨",VIEW_SIGN_LABEL:"이 계약 보기 및 서명",VIEW_APRROVE_LABEL:"이 계약 보기 및 승인",VIEW_DELEGATE_LABEL:"이 계약 보기 및 위임",VIEW_ACKNOWLEDGE_LABEL:"이 계약 보기 및 수신 확인",VIEW_ACCEPT_LABEL:"이 계약 보기 및 수락",VIEW_FILL_FORM_LABEL:"이 계약 보기 및 채우기",SIGN_DOC_RECEIVED:"<b><%= sender %></b>님이 <%= action %>을(를) 위해 문서를 공유했습니다.",SIGN_EMAIL_VIEWED:"<b><%= signer %></b>님이 <b><%= document %></b>에 대한 이메일을 열었습니다.",SIGN_DOC_SIGNED:"<b><%= signer %></b>님이 <b><%= document %></b>을(를) <%= action %>했습니다.",SIGN_EXPIRED_SENDER_ONE_SIGNER:"<b><%= signer %></b>님의 서명을 기다리는 <b><%= document %></b>의 최종 기한이 <%= deadline %>에 만료되었습니다.",SIGN_EXPIRED_SENDER_MANY_SIGNERS:"<b><%= signer %></b>님과 다른 사용자의 서명을 기다리는 <%= document %>의 최종 기한이 <%= deadline %>에 만료되었습니다.",SIGN_EXPIRED_SIGNER:"<b><%= sender %></b>님이 보낸 <b><%= document %></b>에 <%= action %>하기 위한 최종 기한이 만료되었습니다.",SIGN_EMAIL_BOUNCED:"<b><%= document %></b>(을)를 <%= action %>하도록 <b><%= signer %></b>님에게 전송된 이메일이 반송되었습니다. 이메일 주소를 확인하십시오.",SIGN_CANCELLED_SIGNER:"<b><%= sender %></b>님이 <b><%= document %></b>을(를) 취소했습니다.",SIGN_REMINDER_SIGNER:"미리 알림: <b><%= sender %></b>님이 <b><%= document %></b>에 <%= action %>하기를 기다리고 있습니다.",SIGN_REMINDER_DEADLINE_SIGNER:"미리 알림: <b><%= sender %></b>님이 <%= deadline %>까지 <b><%= document %></b>에 <%= action %>하기를 기다리고 있습니다.",SIGN_DOC_DECLINED:"<b><%= signer %></b>님이 <b><%= document %></b>을(를) 거절했습니다.",SIGN_DELEGATE:"<b><%= document %></b>이(가) <b><%= delegator %></b>님에 의해 <b><%= delegatee %></b>에게 위임되었습니다.",FILL_SIGN_DOC_RECEIVED:"<b><%= signer %></b>님이 <%= document %>을(를) 채우고, 전자 서명하고 보냈습니다.",FILL_SIGN_DOC_OPENED:"<b><%= signer %></b>님이 <%= document %>에 대한 이메일을 열었습니다.","S&T_DOC_RECEIVED":"<%= sender %>님이 <%= document %> 사본을 귀하와 공유했습니다.","S&T_DOC_OPENED":"<%= recipient %>님이 <%= document %>을(를) 열어 검토했습니다.","S&T_DOC_DOWNLOADED":"<%= recipient %>님이 <%= document %>을(를) 다운로드했습니다.",EUREKA_DOC_RECEIVED:"<b><%= sender %></b>님이 검토를 위해 <%= date %> <%= time %>에 문서를 공유했습니다.",EUREKA_DOC_RECEIVED_NO_DEADLINE:"<b><%= sender %></b>님이 검토를 위해 문서를 공유했습니다.",FEW_SECONDS_AGO:"몇 초 전",ONE_MINUTE_AGO:"1분 전",N_MINUTES_AGO:"<%= n %>분 전",ONE_HOUR_AGO:"1시간 전",N_HOURS_AGO:"<%= n %>시간 전",ONE_DAY_AGO:"1일 전",N_DAYS_AGO:"<%= n %>일 전",DUE_DATE:"기한: <%= date %>",PRESS_ENTER_SPACE:"스페이스바를 누르거나 Enter 키를 눌러 문서를 여십시오.",MANAGE_ACCESS:"액세스 관리"});

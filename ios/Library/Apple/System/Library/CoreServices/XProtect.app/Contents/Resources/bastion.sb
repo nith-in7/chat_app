@@ -1,0 +1,120 @@
+(version 3)
+
+(allow default job-creation file-write-setugid)
+(allow file-test-existence)
+(allow file-read-metadata)
+
+(define (system-binary signing-id)
+  (require-all
+    (signing-identifier signing-id)
+    (process-attribute is-platform-binary)))
+
+(define bastion-usual-offenders
+  (require-any
+    (system-binary "com.apple.smbd")
+    (system-binary "com.apple.imagent")
+    (system-binary "com.apple.imtransferservices.IMTransferAgent")
+    (system-binary "com.apple.fseventsd")
+    (system-binary "com.apple.mds")
+    (system-binary "com.apple.mdsync")
+    (system-binary "com.apple.XProtectFramework.plugins.MRTv3")
+    (system-binary "com.apple.XProtectFramework.plugins.Pirrit")
+    (system-binary "com.apple.mdworker_shared")
+    (system-binary "com.apple.jetsam_priority")
+    (system-binary "com.apple.diskarbitrationd")
+    (system-binary "com.apple.StorageManagement.Service")
+    (system-binary "com.apple.dt.IDECacheDeleteAppExtension")
+    (system-binary "com.apple.STMExtension.Applications")
+    (system-binary "com.apple.StorageManagement.Service")
+    (system-binary "com.apple.coreservices.uiagent")
+    (system-binary "com.apple.imdpersistence.IMDPersistenceAgent")))
+
+(define rule-one-offenders
+  (require-any
+    (system-binary "com.apple.Safari.PasswordBreachAgent")
+    (system-binary "com.apple.Safari.History")
+    (system-binary "com.apple.Safari.CacheDeleteExtension")
+    (system-binary "com.apple.Finder")
+    (system-binary "com.apple.SafariBookmarksSyncAgent")
+    (system-binary "com.apple.UserEventAgent")
+    (system-binary "com.apple.appkit.xpc.openAndSavePanelService")
+    (system-binary "com.apple.SafariNotificationAgent")
+    (system-binary "com.apple.dt.SKAgent")
+    (system-binary "com.apple.backupd")
+    (system-binary "com.apple.STMExtension.Developer")
+    (system-binary "com.apple.STMExtension.Mail")
+    (system-binary "com.apple.Safari")))
+
+(define rule-two-offenders
+  (require-any
+    (system-binary "com.apple.suggestd")
+    (system-binary "com.apple.IMAutomaticHistoryDeletionAgent")
+    (system-binary "com.apple.MobileSMS")
+    (system-binary "com.apple.MobileSMS.spotlight")
+    (system-binary "com.apple.photolibraryd")
+    (system-binary "com.apple.Spotlight")
+    (system-binary "com.apple.coreduetd")
+    (system-binary "com.apple.filecoordinationd")
+    (system-binary "com.apple.Safari.SandboxBroker")
+    (system-binary "com.apple.quicklook.ThumbnailsAgent")
+    (system-binary "com.apple.messages.StorageManagementExtension")
+    (system-binary "com.apple.corespotlightd")
+    (system-binary "com.apple.mdwrite")))
+
+(define rule-three-offenders
+  (require-any
+    (system-binary "com.apple.Safari")
+    (system-binary "com.apple.cfprefsd")
+    (system-binary "com.apple.mail")
+    (system-binary "com.apple.lsd")
+    (system-binary "com.apple.sharingd")
+    (system-binary "com.apple.dataaccess.dataaccessd")
+    (system-binary "com.apple.defaults")))
+    
+(with-filter
+  (require-not rule-one-offenders)
+    (allow (with user-approval "BastionRule-1") file*
+      (subpath "${ANY_USER_HOME}/Library/Application Support/Google/Chrome/Default/"))
+    (allow (with user-approval "BastionRule-1") file*
+      (subpath "${ANY_USER_HOME}/Library/Application Support/Firefox/Profiles/"))
+    (allow (with user-approval "BastionRule-1") file*
+      (subpath "${ANY_USER_HOME}/Library/Safari/")))
+
+(with-filter
+  (require-not rule-two-offenders)
+    (allow (with user-approval "BastionRule-2") file*
+      (subpath "${ANY_USER_HOME}/Library/Messages/"))
+    (allow (with user-approval "BastionRule-2") file*
+      (subpath "${ANY_USER_HOME}/Library/Application Support/Microsoft/Teams/"))
+    (allow (with user-approval "BastionRule-2") file*
+      (subpath "${ANY_USER_HOME}/Library/Application Support/Slack/"))
+    (allow (with user-approval "BastionRule-2") file*
+      (subpath "${ANY_USER_HOME}/Library/Application Support/WhatsApp/")))
+
+(with-filter
+  (require-not rule-three-offenders)
+    (allow (with user-approval "BastionRule-3") file*
+      (literal "${ANY_USER_HOME}/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV2")))
+
+(with-filter
+  (require-not (process-attribute is-platform-binary))
+    (allow (with user-approval "BastionRule-4") socket-ioctl
+      (ioctl-command SIOCIFCREATE SIOCGIFDESC)))
+
+(allow (with user-approval "BastionRule-5") file-write*
+  (regex #"^/Library/PrivilegedHelperTools/\."))
+
+(with-filter
+  (require-not bastion-usual-offenders)
+    (allow (with user-approval "BastionRule-6") file-write-create
+      (regex #"^/Library/Application Support/com.[0-9]+?/[0-9]+?"))
+    (allow (with user-approval "BastionRule-7") file-write-create
+      (require-all
+        (prefix "${ANY_USER_HOME}/Library/Application Support")
+        (regex #"/Library/Application Support/com\.[a-zA-Z]+?(Search|Daemon|Results|Lookup|Searches)/[a-zA-Z]+?(Search|Daemon|Results|Lookup|Searches)$")))
+    (allow (with user-approval "BastionRule-7") file-write-create
+      (regex #"^/Library/Application Support/com\.[a-zA-Z]+?(Search|Daemon|Results|Lookup|Searches)/[a-zA-Z]+?(Search|Daemon|Results|Lookup|Searches)$")))
+
+(with-filter
+  (require-all bastion-usual-offenders)
+    (allow file-read* file-write-create file-write*))

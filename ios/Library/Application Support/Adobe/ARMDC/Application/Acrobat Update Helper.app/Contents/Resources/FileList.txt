@@ -1,0 +1,42 @@
+#Lines having ‘d’ in beginning mean that the path is a directory which is to be deleted iff it is empty
+#Lines having ‘D’ in beginning mean that the path is a directory which is to be deleted recursively
+#
+
+
+
+/Library/LaunchAgents/com.adobe.ARMDCHelper.cc24aef4a1b90ed56a725c38014c95072f92651fb65e1bf9c8e43c37a23d420d.plist
+/Library/LaunchDaemons/com.adobe.ARMDC.Communicator.plist
+/Library/LaunchDaemons/com.adobe.ARMDC.SMJobBlessHelper.plist
+/Library/PrivilegedHelperTools/com.adobe.ARMDC.Communicator
+/Library/PrivilegedHelperTools/com.adobe.ARMDC.SMJobBlessHelper
+/Library/Application Support/Adobe/ARMDC/Application/Adobe Acrobat Updater.app
+/Library/Application Support/Adobe/ARMDC/Application/Acrobat Update Helper.app
+/Library/Application Support/Adobe/ARMDC/Application/AcrobatUpdateHelperLib.dylib
+/Library/Application Support/Adobe/ARMDC/Application/AcrobatUpdaterUninstaller
+/Library/Application Support/Adobe/ARMDC/Registered Products/com.adobe.ARMDCHelper.plist
+/Library/Application Support/Adobe/ARMDC/Application/com.adobe.ARMDCProductInfo.plist
+/Library/Application Support/Adobe/ARMDC/AdobeARMOverrides.plist
+
+### SPECIAL CASE start ####
+# Acrobat/Reader was incorrectly placing the AdobeARMOverrides.plist file in Application folder of ARMDC
+/Library/Application Support/Adobe/ARMDC/Application/AdobeARMOverrides.plist
+
+# While transition to ARMDC from ARMNext, we have left below folders.
+D/Library/Application Support/Adobe/ARMNext
+### SPECIAL CASE end ####
+
+#
+#
+
+d/Library/Application Support/Adobe/ARMDC/Registered Products
+d/Library/Application Support/Adobe/ARMDC/Application
+d/Library/Application Support/Adobe/ARMDC
+d/Library/Application Support/Adobe
+
+
+#
+#
+D~/Library/Preferences/Adobe/ARMDC/Support Files
+D~/Library/Preferences/Adobe/ARMDC/ARM Update Notifier
+d~/Library/Preferences/Adobe/ARMDC
+d~/Library/Preferences/Adobe

@@ -1,0 +1,20 @@
+#include "Configurations/AcrobatSourceTreeRoot.xcconfig"
+
+// #include "../../../../pdfl/PDF/Config/Mac/mac_app.xcconfig"
+
+SYMROOT = $(ACROBAT_SOURCE_TREE_ROOT)/BuildResults/$(ACROBAT_DEPLOYMENT_LOCATION)
+OBJROOT = $(ACROBAT_SOURCE_TREE_ROOT)/BuildResults/obj/$(PROJECT_NAME)
+CONFIGURATION_BUILD_DIR = $(SYMROOT)
+
+
+// Prefix header
+GCC_PREFIX_HEADER =
+GCC_PRECOMPILE_PREFIX_HEADER = NO
+
+HEADER_SEARCH_PATHS = $(ACROBAT_SOURCE_TREE_ROOT)/Common/synchronizer/RSLib/Include  $(ACROBAT_SOURCE_TREE_ROOT)/Common/JSONUtils $(ACROBAT_SOURCE_TREE_ROOT)/Acrobat/SystemSynchronizer/JSONParser/Include $(ACROBAT_SOURCE_TREE_ROOT)/Plugins/WCFirefoxExtn/WIN/src   $(ACROBAT_SOURCE_TREE_ROOT)/pdfl/PDF/Config/Version/
+
+LIBRARY_SEARCH_PATHS = ;
+
+PRODUCT_BUNDLE_IDENTIFIER = "com.adobe.acrobat.web_capture"
+
+PREPROCESSOR_MACROS = NO_ASCAB_DEF_JSON  // _MSC_VER doesn't work with RSSharedPtr.h

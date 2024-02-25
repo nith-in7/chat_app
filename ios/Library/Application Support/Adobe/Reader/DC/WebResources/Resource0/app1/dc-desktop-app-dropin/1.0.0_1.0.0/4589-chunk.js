@@ -1,0 +1,2 @@
+"use strict";(self["webpackJsonp-desktop-app"]=self["webpackJsonp-desktop-app"]||[]).push([[4589],{gEPk:(p,e,s)=>{s.r(e),s.d(e,{default:()=>a});const a=s.p+"de8aa8c5f8b25d655a90ad391e511c51.png"}}]);
+//# sourceMappingURL=private/4589-chunk.js.map

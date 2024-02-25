@@ -1,0 +1,20 @@
+/**************************************************************************
+*
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+* Copyright 2018 Adobe Systems Incorporated
+* All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and may be covered by U.S. and Foreign Patents,
+* patents in process, and are protected by trade secret or copyright law.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+***************************************************************************/
+
+function GetRNAProxyHandler(e){return{_proxy:e,get:function(t,n){return t.hasOwnProperty(n)||e._hasProperty(n)&&(t[n]=CreateRNAProxyObject(e[n])),t[n]},set:function(e,t,n){return t in e?!1:e.setItem(t,n)},deleteProperty:function(e,t){return t in e?!1:e.removeItem(t)},apply:function(t,n,r){return new Promise(function(t,n){var i=e._invoke(r[0]);i._done(function(e,r){if(e===0){var i=CreateRNAProxyObject(r);i==undefined?t(r):t(i)}else n(r)}),i._fail(function(e,t){n(t)})})},enumerate:function(e,t){return e.keys()},ownKeys:function(e,t){return e.keys()},has:function(e,t){return t in e||e.hasItem(t)},defineProperty:function(e,t,n){return n&&"value"in n&&e.setItem(t,n.value),e},getOwnPropertyDescriptor:function(e,t){const n=e.getItem(t);return n?{value:n,writable:!1,enumerable:!0,configurable:!1}:undefined}}}function CreateRNAProxyObject(e){switch(e._type){case Constants.RNA.PRIMITIVE_PROXY:return e._value;case Constants.RNA.FUNCTION_PROXY:return new Proxy(function(){},GetRNAProxyHandler(e));case Constants.RNA.VECTOR_PROXY:case Constants.RNA.MAP_PROXY:var t=new Object;return t._proxy=e,t._contextId=e._context,t.id=e._id,new Proxy(t,GetRNAProxyHandler(e))}return}function GetAcrobatApi(){return new Promise(function(e,t){var n=function(n,r,i){n&&t(n),clipboardAPIClassObject._appApiProxy=CreateRNAProxyObject(i.rna),e(clipboardAPIClassObject._appApiProxy)};clipboardAPIClassObject._appApiProxy?e(clipboardAPIClassObject._appApiProxy):window.odm.createContext("processType=p6:",n)})}function ClipboardApi(){return new Promise(function(e,t){GetAcrobatApi().then(function(t){e(t.clipboardAPI)}).catch(function(e){})})}function GetClipBoardData(){return new Promise(function(e,t){ClipboardApi().then(function(t){t.readClipboardData({}).then(function(t){e(t)})}).catch(function(e){})})}function SetClipBoardData(e,t){ClipboardApi().then(function(n){n.writeClipboardData({text:e,shouldIgnore:t})}).catch(function(e){})}function GetPreCaretData(){var e=document.activeElement.selectionStart,t=document.activeElement.value;return e>0?t.substr(0,e<t.length?e:t.length):""}function GetPostCaretData(){var e=document.activeElement.selectionEnd,t=document.activeElement.value;return e>0&&e<t.length?t.substr(e):""}const Constants={RNA:{PRIMITIVE_PROXY:1,MAP_PROXY:2,VECTOR_PROXY:3,FUNCTION_PROXY:4}};var clipboardAPIClassObject=new Object;document.addEventListener("copy",function(e){var t=document.getSelection().toString();try{var n=t.length==0;SetClipBoardData(t,n)}catch(r){}}),document.addEventListener("cut",function(e){var t=document.getSelection().toString();try{var n=t.length==0;SetClipBoardData(t,n)}catch(r){}}),document.addEventListener("paste",function(e){var t=GetPreCaretData(),n=GetPostCaretData(),r=document.activeElement;try{GetClipBoardData().then(function(e){try{if(document.getSelection().type!="None"){var i=t+e+n,s=(t+e).length,o=r.value;r.value=i;const u=r._valueTracker;u&&typeof u.setValue=="function"&&u.setValue(o),r.dispatchEvent(new Event("change",{bubbles:!0})),r.selectionStart=s,r.selectionEnd=s}}catch(a){}})}catch(i){}e.preventDefault()});

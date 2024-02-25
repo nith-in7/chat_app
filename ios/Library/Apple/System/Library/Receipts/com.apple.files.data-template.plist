@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AdditionalInformation</key>
+	<dict>
+		<key>SymlinkedDirectoryPatterns</key>
+		<array>
+			<string>Library/Application Support/Apple/Photos/Print Products/Catalogs/*.ppcatalog/Contents</string>
+			<string>Library/Application Support/Apple/Photos/Print Products/Previews/*.pppreview/Contents</string>
+			<string>Library/Application Support/Apple/Photos/Print Products/Themes/*.pptheme/Contents</string>
+			<string>System/Library/AssetsV2/PreinstalledAssetsV2/*/com_apple_MobileAsset_VoiceTriggerAssetsMac/*.asset/AssetData</string>
+			<string>System/Library/AssetsV2/PreinstalledAssetsV2/*/com_apple_MobileAsset_ContextKit/*.asset/AssetData</string>
+			<string>System/Library/PreinstalledAssetsV2/*/com_apple_MobileAsset_VoiceTriggerAssetsMac/*.asset/AssetData</string>
+			<string>System/Library/PreinstalledAssetsV2/*/com_apple_MobileAsset_ContextKit/*.asset/AssetData</string>
+		</array>
+		<key>SymlinkedFilePatterns</key>
+		<array>
+			<string>System/Library/CoreServices/CoreTypes.bundle/Contents/Library/MobileDevices*.bundle/Contents/Resources/*.icns</string>
+			<string>Library/User Pictures/**</string>
+		</array>
+		<key>SystemBuild</key>
+		<string>23D60</string>
+		<key>SystemVersion</key>
+		<string>14.3.1</string>
+	</dict>
+	<key>InstallDate</key>
+	<date>2024-02-10T06:44:43Z</date>
+	<key>InstallPrefixPath</key>
+	<string>/</string>
+	<key>InstallProcessName</key>
+	<string>templateMigrator</string>
+	<key>PackageGroups</key>
+	<array>
+		<string>com.apple.FindSystemFiles.pkg-group</string>
+		<string>com.apple.OSTemplate.pkg-group</string>
+	</array>
+	<key>PackageIdentifier</key>
+	<string>com.apple.files.data-template</string>
+	<key>PackageVersion</key>
+	<string>14.3.1</string>
+</dict>
+</plist>

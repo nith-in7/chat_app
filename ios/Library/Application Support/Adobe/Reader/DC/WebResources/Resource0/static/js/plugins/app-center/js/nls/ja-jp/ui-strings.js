@@ -1,0 +1,19 @@
+/*************************************************************************
+* ADOBE CONFIDENTIAL
+* ___________________
+*
+*  Copyright 2017 Adobe Systems Incorporated
+*  All Rights Reserved.
+*
+* NOTICE:  All information contained herein is, and remains
+* the property of Adobe Systems Incorporated and its suppliers,
+* if any.  The intellectual and technical concepts contained
+* herein are proprietary to Adobe Systems Incorporated and its
+* suppliers and are protected by all applicable intellectual property laws,
+* including trade secret and or copyright laws.
+* Dissemination of this information or reproduction of this material
+* is strictly forbidden unless prior written permission is obtained
+* from Adobe Systems Incorporated.
+**************************************************************************/
+
+define({SELECTOR_LABEL:"app_center",APP_CENTER:"アプリケーションセンター",app_center_TITLE:"Adobe Document Cloud をさらに活用",app_center_CONTENT:"デスクトップ、オンライン、モバイル、どこでも作業可能",app_center_DESKTOP_APPS:"デスクトップアプリケーション",app_center_ACROBAT_PRO_DC_HEADER:"Acrobat Pro",app_center_ACROBAT_PRO_DC_CONTENT:"PDF の作成、書き出し、編集が可能なツールを含む Acrobat Pro の無料体験版をお試しください。",app_center_WEB_APPS:"Web アプリケーション&サービス",app_center_DOCUMENT_CLOUD_HEADER:"Document Cloud",app_center_DOCUMENT_CLOUD_CONTENT_READER:"お好きな Acrobat Reader ツールを任意のブラウザーでご利用ください。",app_center_DOCUMENT_CLOUD_CONTENT_ACROBAT:"お好きな Acrobat ツールを任意のブラウザーでご利用ください。",app_center_MOBILE_APPS:"モバイルアプリ",app_center_ACROBAT_READER_HEADER:"Acrobat Reader",app_center_ACROBAT_READER_CONTENT_READER:"スマートフォンやタブレットで直接ファイルへの注釈の追加、署名、共有をおこなえます。",app_center_ACROBAT_READER_CONTENT_ACROBAT:"スマートフォンやタブレットで直接ファイルの作成、書き出し、入力、署名、共有をおこなえます。",app_center_ADOBE_SCAN_HEADER:"Adobe Scan",app_center_ADOBE_SCAN_CONTENT:"レシート、メモ、文書など、あらゆるものをスキャンして PDF を作成できます。",app_center_FILL_SIGN_HEADER:"入力と署名",app_center_FILL_SIGN_CONTENT:"移動中でもフォームへの入力や署名を簡単におこなえます。",app_center_TRY:"使ってみる",app_center_LAUNCH:"起動",app_center_DOWNLOAD:"ダウンロード",app_center_GET_APP:"アプリケーションを入手",app_center_card_ADOBE_SCAN:"Adobe Scan",app_center_card_ADOBE_SCAN_TITLE:"無償の Adobe Scan アプリケーションを入手",app_center_card_ADOBE_SCAN_DESCRIPTION:"スマートフォンやタブレットでスキャンして PDF に変換できます。今すぐダウンロード。",app_center_card_ADOBE_ACROBAT_READER:"Adobe Acrobat Reader",app_center_card_ADOBE_ACROBAT_READER_TITLE:"無償の Adobe Acrobat Reader アプリケーションを入手",app_center_card_ADOBE_ACROBAT_READER_DESCRIPTION:"PDF や署名ツールをモバイルデバイスで利用できます。今すぐダウンロード。",app_center_card_ADOBE_FILL_SIGN:"Adobe Fill & Sign",app_center_card_ADOBE_FILL_SIGN_TITLE:"無償の Adobe Fill & Sign アプリケーションを入手",app_center_card_ADOBE_FILL_SIGN_DESCRIPTION:"スマートフォンやタブレットからあらゆるフォームへの入力、署名、送信をすばやくおこなえます。今すぐダウンロード。",app_center_qr_code_card_ADOBE_SCAN:"Adobe Scan",app_center_qr_code_card_GET_ADOBE_SCAN_TITLE:"無償の Adobe Scan アプリを入手",app_center_qr_code_card_OPEN_ADOBE_SCAN_TITLE:"Adobe Scan アプリを開く",app_center_qr_code_card_GET_ADOBE_SCAN_DESCRIPTION:"QR コードをスキャンすると、Adobe Scan モバイルアプリを使用して、文書や領収書などを PDF に変換できます。",app_center_qr_code_card_OPEN_ADOBE_SCAN_DESCRIPTION:"QR コードをスキャンすると、Adobe Scan アプリを使用して、文書や領収書などを PDF に変換できます。",app_center_qr_code_card_READER_ADOBE_SCAN_DESCRIPTION:"QR コードをスキャンすると、Adobe Scan モバイルアプリを使用して、文書や領収書などを PDF に変換できます。",app_center_qr_code_card_ADOBE_ACROBAT_READER:"Adobe Acrobat Reader",app_center_qr_code_card_GET_ADOBE_ACROBAT_READER_TITLE:"無償の Adobe Acrobat Reader アプリを入手",app_center_qr_code_card_OPEN_ADOBE_ACROBAT_READER_TITLE:"Acrobat Reader アプリを開く",app_center_qr_code_card_GET_ADOBE_ACROBAT_READER_DESCRIPTION:"QR コードをスキャンすると、Adobe Acrobat Reader モバイルアプリを使用して PDF を表示および編集できます。",app_center_qr_code_card_OPEN_ADOBE_ACROBAT_READER_DESCRIPTION:"QR コードをスキャンし、Acrobat Reader モバイルアプリを使用して PDF を表示および操作できます。",app_center_qr_code_card_READER_ADOBE_ACROBAT_READER_DESCRIPTION:"QR コードをスキャンすると、Adobe Acrobat Reader モバイルアプリで PDF の表示、入力、署名およびコメント追加ができます。",app_center_qr_code_card_OK_BUTTON:"OK"});
