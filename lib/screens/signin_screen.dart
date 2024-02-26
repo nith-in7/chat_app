@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
+final _firebase = FirebaseAuth.instance;
 
 class SignIn extends StatefulWidget {
   const SignIn({super.key});
@@ -14,11 +15,30 @@ class _SignInState extends State<SignIn> {
 
   var _enteredEmail = "";
   var _enteredPassword = "";
-  
-  void _onSubmitt() {
-    final value = _formKey.currentState!.validate();
-    if (value) {
-      _formKey.currentState!.save();
+
+  @override
+  void initState() {
+    super.initState();
+  }
+
+  void _onSubmitt() async {
+    final isValid = _formKey.currentState!.validate();
+    if (!isValid) {
+      return;
+    }
+    _formKey.currentState!.save();
+    if (toSignIn) {
+    } else {
+      try {
+        final userCrendials = await _firebase.createUserWithEmailAndPassword(
+            email: _enteredEmail, password: _enteredPassword);
+        print(userCrendials);
+      } on FirebaseAuthException catch (error) {
+        if (error.code == "") {}
+        ScaffoldMessenger.of(context).clearSnackBars();
+        ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(content: Text(error.message ?? "Authentication Failed")));
+      }
     }
   }
 
@@ -29,7 +49,7 @@ class _SignInState extends State<SignIn> {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
-        padding: const EdgeInsets.all(30),
+        padding: const EdgeInsets.fromLTRB(30, 30, 30, 0),
         height: MediaQuery.of(context).size.height,
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
@@ -47,16 +67,17 @@ class _SignInState extends State<SignIn> {
                 "assets/Images/logo.png",
                 color: Colors.white,
               ),
-              AnimatedContainer(
-                duration: const Duration(milliseconds: 1000),
-                curve: Curves.decelerate,
+              Container(
+                alignment: Alignment.center,
+                width: 400,
+                height: 450,
                 decoration: BoxDecoration(
                     color: Theme.of(context).colorScheme.background,
-                    borderRadius: BorderRadius.circular(20)),
+                    borderRadius: BorderRadius.circular(32)),
                 child: Form(
                   key: _formKey,
                   child: Padding(
-                    padding: const EdgeInsets.all(20),
+                    padding: const EdgeInsets.fromLTRB(20, 0, 20, 20),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisSize: MainAxisSize.min,
@@ -66,7 +87,7 @@ class _SignInState extends State<SignIn> {
                           style: Theme.of(context).textTheme.headlineLarge,
                         ),
                         const SizedBox(
-                          height: 20,
+                          height: 30,
                         ),
                         TextFormField(
                           autocorrect: false,
@@ -86,13 +107,18 @@ class _SignInState extends State<SignIn> {
                             }
                             return null;
                           },
-                          decoration: const InputDecoration(
-                              border: OutlineInputBorder(),
-                              label: Text("Email"),
-                              prefixIcon: Icon(Icons.email_outlined)),
+                          decoration: InputDecoration(
+                              border: const OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(16))),
+                              label: const Text("Email"),
+                              prefixIcon: Icon(
+                                Icons.email_outlined,
+                                color: Theme.of(context).colorScheme.primary,
+                              )),
                         ),
                         const SizedBox(
-                          height: 20,
+                          height: 30,
                         ),
                         TextFormField(
                           autocorrect: false,
@@ -109,24 +135,32 @@ class _SignInState extends State<SignIn> {
                             return null;
                           },
                           decoration: InputDecoration(
-                              border: const OutlineInputBorder(),
+                              border: const OutlineInputBorder(
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(16))),
                               label: const Text("Password"),
-                              suffixIcon: TextButton(
-                                style: TextButton.styleFrom(
+                              suffixIcon: IconButton(
+                                icon: Icon(
+                                  obsure
+                                      ? Icons.visibility_outlined
+                                      : Icons.visibility_off_outlined,
+                                  color: Colors.grey,
+                                ),
+                                style: IconButton.styleFrom(
                                     splashFactory: NoSplash.splashFactory),
-                                child: obsure
-                                    ? const Text("Show")
-                                    : const Text("Hide"),
                                 onPressed: () {
                                   setState(() {
                                     obsure = !obsure;
                                   });
                                 },
                               ),
-                              prefixIcon: const Icon(Icons.password_outlined)),
+                              prefixIcon: Icon(
+                                Icons.password_outlined,
+                                color: Theme.of(context).colorScheme.primary,
+                              )),
                         ),
                         const SizedBox(
-                          height: 20,
+                          height: 30,
                         ),
                         SizedBox(
                           height: 50,
