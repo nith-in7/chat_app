@@ -40,3 +40,6 @@ This Flutter project is a group chat application where users can log in using th
 ![Chat Screen](https://github.com/nith-in7/chat_app/assets/124262214/f341a609-69ac-4bcd-9b8e-c3c2806b50f2)
 
 ## Live Demo
+
+![Demo](https://github.com/nith-in7/chat_app/assets/124262214/6c3f4109-9861-4d29-a5f8-7084caebd5ad)
+
