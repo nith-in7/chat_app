@@ -3,7 +3,6 @@ import 'package:chat_app/widgets/new_messages.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class ChatScreen extends StatefulWidget {
   const ChatScreen({super.key});
